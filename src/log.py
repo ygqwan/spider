@@ -28,10 +28,10 @@ class Logger(object):
         log_handler.setFormatter(formatter)
         ll = (logging.CRITICAL, logging.ERROR, logging.WARNING,
               logging.INFO, logging.DEBUG)
-        if not self.logfile in range(1, 6):
-            self.logfile = 5
-        logger.setLevel(ll[self.logfile - 1])
-        log_handler.setLevel(ll[self.logfile - 1])
+        if not self.loglevel in range(1, 6):
+            self.loglevel = 5
+        logger.setLevel(ll[self.loglevel - 1])
+        log_handler.setLevel(ll[self.loglevel - 1])
         logger.addHandler(log_handler)
         return logger
 
